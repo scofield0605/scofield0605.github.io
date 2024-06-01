@@ -5,19 +5,19 @@
         "Nimbus Sans L", Roboto, Noto, "Segoe UI", Arial, Helvetica,
         "Helvetica Neue", sans-serif;
     --mono-font: Consolas, Menlo, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
-    --header-bg: #d19696;
-    --bg: white;
+    --header-bg: rgb(2, 84, 131);
+    --bg: rgb(50, 169, 163);
     --nav: #b99797;
-    --box-bg: #d8bebe;
-    --text: #dcdcdc;
+    --box-bg: #4b87ccd6;
+    --text: #e8c129;
     --text-light: #ababab;
     --border: #666;
     --image_border_color: #666;
     --image_border_px: 2px;
     --image_width: 100px;
     --image_height: 100px;
-    --title-text: rgb(212, 91, 91);
-    --description-text: rgb(161, 120, 120);
+    --title-text: rgb(232, 208, 27);
+    --description-text: rgb(27, 49, 108);
 }
 
 html {
