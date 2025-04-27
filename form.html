@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <!-- 引入 Bootstrap 5 的 JS 和 Popper.js -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>社團加入表單</title>
+</head>
+
+<body>
+    <div class="container mt-5">
+        <h2>社團加入表單</h2>
+        <form method="POST" action="{{ url_for('index') }}">
+            <div class="row mb-3">
+                <label for="name" class="col-sm-2 col-form-label">姓名</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="name" name="name" placeholder="請輸入姓名" required>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="email" for="email" class="col-sm-2 col-form-label">電子郵件</label>
+                <div class="col-sm-10">
+                    <input type="email" class="form-control" id="email" name="email" placeholder="請輸入電子郵件" required>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label for="club" class="col-sm-2 col-form-label">社團</label>
+                <div class="col-sm-10">
+                    <select class="form-select" id="club" name="club" required>
+                        <option value="">請選擇社團</option>
+                        <option value="1">籃球社</option>
+                        <option value="2">羽球社</option>
+                        <option value="3">棒球社</option>
+                    </select>
+                </div>
+
+            </div>
+            <div class="row mb-3">
+                <label for="gender" class="col-sm-2 col-form-label">性別</label>
+
+                <div class="cow mb-3">
+                    <label class="col-sm-2 col-form-Label">選擇性別</1abel>
+                        <div class="col-sm-10">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="gender" id="genderMale" value="male">
+                                <label class="form-check-label" for="genderMale" checked>男</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="gender" id="genderFemale"
+                                    value="female">
+                                <label class="form-check-label" for="genderFemale">女</label>
+                            </div>
+                            <input type="hidden" name="gender" value="male">
+                        </div>
+                </div>
+
+                <div class="row mb-3">
+                    <label class="col-sm-2 col-form-label">興趣</label>
+                    <div class="col-sm-10">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="interestMusic" name="music">
+                            <label class="form-check-label" for="interestMusic">音樂</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="interestSport" name="sport">
+                            <label class="form-check-label" for="interestSport">運動</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="interestTechnology" name="technology">
+                            <label class="form-check-label" for="interestTechnology">科技</label>
+                        </div>
+                        <input type="hidden" name="music" value="off"> <input type="hidden" name="sport" value="off">
+                        <input type="hidden" name="technology" value="off">
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <label for="commitmentLevel" class="col-sm-2 col-form-label">出席率預測 1~10</label>
+                    <div class="col-sm-10">
+                        <input type="range" class="form-range" id="commitmentLevel" min="1" max="10" step="1">
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <label for="newsletter" class="col-sm-2 col-form-label">訂略電子報</label>
+                    <div class="col-sm-10">
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="newsletter" name="newsletter" value="on">
+                            <label class="form-check-Label" for="news letter">是否訂閱社團的電子報</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-sm-10">
+                        <button type="submit" class="btn btn-primary">提交</button>
+                    </div>
+                </div>
+        </form>
+    </div>
+</body>
