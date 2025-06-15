@@ -81,7 +81,7 @@
             </div>
             <div class="row justify-content-center">
                 <div class="col-lg-8">
-                    <form id="contactForm">
+                    <form id="contactForm" method="post" action="https://fullstackapi-764607865512.northamerica-northeast2.run.app">
                         <div class="form-group">
                             <label for="name">Name <span class="text-danger">*</span></label>
                             <input type="text" class="form-control" id="name" placeholder="Your name" required>
@@ -126,7 +126,7 @@
         feather.replace({ width: '1em', height: '1em' });
 
         document.getElementById('contactForm').addEventListener('submit', function(event) {
-            event.preventDefault();  // 防止表單真的提交
+            // event.preventDefault();  // 防止表單真的提交
 
             const name = document.getElementById('name').value.trim();
             const email = document.getElementById('email').value.trim();

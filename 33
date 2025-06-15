@@ -1,0 +1,43 @@
+import functions_framework
+import smtplib
+from flask import redirect, request
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
+
+
+@functions_framework.http
+def hello_http(request):
+    if request.method == 'POST':
+        name = request.values.get['name']
+        email = request.values.get['email']
+        phone = request.values.get['phone']
+        message = request.values.get['message']
+
+        text = "姓名:{}\n信箱:{}\n電話:{}\n\n內容:\n{}".format(name, email, phone, message)
+        text = MIMEText(text)
+        
+        content = MIMEMultipart()
+        content['subject'] = "有人要留言給你囉"
+        content['from'] = "lennertyen1226@gmail.com"
+        content['to'] = "lennertyen1226@gmail.com"
+        content.attach(text)
+
+        smtp = smtplib.SMTP(host="smtp.gmail.com", port=587)
+        with open("./password.txt", "r") as f:
+            mailToken = f.read().strip()
+        
+        try:
+            smtp.ehlo()
+            smtp.starttls()
+            smtp.login("lennertyen1226@gmail.com", mailToken)
+            smtp.send_message(content)
+            print("Email is sent successfully!")
+        except Exception as e:
+            print("Error sending failed: ", e)
+            return "Internal Server Error", 500
+        finally:
+            smtp.quit()
+
+        return redirect("https://github.com/Lennert1226/Lennert1226.github.io")
+
+    return "Hi"
