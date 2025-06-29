@@ -15780,7 +15780,7 @@ button.bg-orange:focus
 
 .bg-gradient-orange
 {
-    background: linear-gradient(50deg, #ffbe3d 0, #fff83d 100%) !important;
+    background: linear-gradient(90deg, #ffbe3d 0, #fff83d 100%) !important;
 }
 
 .bg-yellow
